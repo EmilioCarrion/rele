@@ -50,6 +50,10 @@ class Worker:
             )
 
     def run(self, wait=60):
+        """Shortcut for calling setup, start and sleep.
+
+        :param wait: Number of seconds to sleep after starting
+        """
         self.setup()
         self.start()
         sleep(wait)
