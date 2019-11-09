@@ -48,6 +48,10 @@ class Worker:
                 )
             )
 
+    def run(self):
+        self.setup()
+        self.start()
+
     def stop(self, signal=None, frame=None):
         """Manage the shutdown process of the worker.
 
