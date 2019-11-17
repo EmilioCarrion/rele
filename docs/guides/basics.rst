@@ -128,12 +128,7 @@ and will begin to pull the messages from the topic.
     from subs import photo_uploaded
 
     if __name__ == '__main__':
-        worker = Worker(
-            [photo_uploaded],
-            config.gc_project_id,
-            config.credentials,
-            config.ack_deadline,
-        )
+        worker = Worker([photo_uploaded], config)
         worker.setup()
         worker.start()
         sleep(120)
