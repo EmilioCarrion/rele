@@ -31,12 +31,7 @@ class Command(BaseCommand):
         self.stdout.write(f"Configuring worker with {len(subs)} " f"subscription(s)...")
         for sub in subs:
             self.stdout.write(f"  {sub}")
-        worker = Worker(
-            subs,
-            self.config.gc_project_id,
-            self.config.credentials,
-            self.config.ack_deadline,
-        )
+        worker = Worker(subs, self.config)
         worker.setup()
         worker.start()
 
